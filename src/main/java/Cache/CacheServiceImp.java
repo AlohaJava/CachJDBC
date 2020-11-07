@@ -96,8 +96,6 @@ public class CacheServiceImp implements CacheService {
         }
 
         return listFromCache;
-
-
     }
 
 }

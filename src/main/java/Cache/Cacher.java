@@ -15,7 +15,6 @@ public class Cacher implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Exception {
         if (method.isAnnotationPresent(Cacheble.class)) {
             CacheService cacheService = new CacheServiceImp(method.getAnnotation(Cacheble.class).value().newInstance(), method);
-
             List<Integer> res = cacheService.getChachedIntList((int) args[0]);
 
             if (res!=null) {
